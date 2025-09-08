@@ -9,5 +9,7 @@ namespace negocio
 {
     public class CategoriaNegocio
     {
+
+
     }
 }

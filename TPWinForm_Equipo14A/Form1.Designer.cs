@@ -40,13 +40,13 @@
             this.dgvART.Location = new System.Drawing.Point(12, 71);
             this.dgvART.Name = "dgvART";
             this.dgvART.RowHeadersWidth = 51;
-            this.dgvART.Size = new System.Drawing.Size(495, 167);
+            this.dgvART.Size = new System.Drawing.Size(1000, 167);
             this.dgvART.TabIndex = 0;
             this.dgvART.SelectionChanged += new System.EventHandler(this.dgvART_SelectionChanged);
             // 
             // pbx
             // 
-            this.pbx.Location = new System.Drawing.Point(524, 71);
+            this.pbx.Location = new System.Drawing.Point(1040, 71);
             this.pbx.Name = "pbx";
             this.pbx.Size = new System.Drawing.Size(252, 167);
             this.pbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -55,7 +55,7 @@
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(848, 331);
+            this.ClientSize = new System.Drawing.Size(1369, 302);
             this.Controls.Add(this.pbx);
             this.Controls.Add(this.dgvART);
             this.Name = "Form1";

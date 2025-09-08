@@ -15,24 +15,14 @@ namespace negocio
         public List<Articulos> listar()
         {
             List<Articulos> lista = new List<Articulos>();
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
-            string datos = "";
+            AccesoBD datos = new AccesoBD();
 
             try
             {
+                datos.setearQuery("Select ART.Id, ART.Nombre , ART.Precio, I.ImagenUrl from ARTICULOS as ART inner join IMAGENES as I on ART.Id = I.IdArticulo");
+                datos.ejecutarLectura();
 
-                conexion.ConnectionString = Conexion(datos);
-                comando.CommandType = System.Data.CommandType.Text;
-                //comando.CommandText = "Select Codigo,Nombre,Descripcion,Precio From ARTICULOS";
-                comando.CommandText = "Select ART.Id, ART.Nombre , ART.Precio, I.ImagenUrl from ARTICULOS as ART inner join IMAGENES as I on ART.Id = I.IdArticulo";
-                comando.Connection = conexion;
-
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
                     /*
@@ -41,19 +31,22 @@ namespace negocio
                     aux.Descripcion = (string)lector["Descripcion"];
                     aux.Precio = (decimal)lector["Precio"];
                     */
-                    aux.ID = (int)lector["Id"];
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Precio = (decimal)lector["Precio"];
-                    aux.UrlImagen = (string)lector["ImagenUrl"];
+                    aux.ID = (int)datos.Lector["Id"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                 }
-                conexion.Close();
                 return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
             }
         }
         /*
@@ -79,60 +72,50 @@ namespace negocio
         public List<Articulos> VerDetalle()
         {
             List<Articulos> lista = new List<Articulos>();
+            AccesoBD datos = new AccesoBD();
 
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            SqlDataReader lector;
-            string datos = "";
-            try {
-
-                conexion.ConnectionString = Conexion(datos);
-                comando.CommandType = System.Data.CommandType.Text;
-                
-                comando.CommandText = "Select ART.Id ,ART.Codigo,M.Descripcion as Marca,  ART.Nombre , ART.Descripcion, ART.Precio,  C.Descripcion as Categoria, I.ImagenUrl from ARTICULOS as ART"
+            try
+            {
+                datos.setearQuery("Select ART.Id ,ART.Codigo,M.Descripcion as Marca,  ART.Nombre , ART.Descripcion, ART.Precio,  C.Descripcion as Categoria, I.ImagenUrl from ARTICULOS as ART"
                 + " inner join IMAGENES as I on ART.Id = I.IdArticulo"
                 + " inner join MARCAS as M on ART.IdMarca = M.Id"
-                + " inner join CATEGORIAS as C on ART.IdCategoria = C.Id";
-                comando.Connection = conexion;
+                + " inner join CATEGORIAS as C on ART.IdCategoria = C.Id");
+                datos.ejecutarLectura();
 
-                conexion.Open();
-                lector = comando.ExecuteReader();
-
-                while (lector.Read())
+                while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
                     aux.Marca = new Marca();
                     aux.Categoria = new Categoria();
                    
 
-                    aux.ID = (int)lector["Id"];
-                    aux.CodigoArticulo = (string)lector["Codigo"];
+                    aux.ID = (int)datos.Lector["Id"];
+                    aux.CodigoArticulo = (string)datos.Lector["Codigo"];
 
-                    aux.Marca.DescripcionMarca = (string)lector["Marca"];
+                    aux.Marca.DescripcionMarca = (string)datos.Lector["Marca"];
                     
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.DescripcionART = (string)lector["Descripcion"];
-                    aux.Precio = (decimal)lector["Precio"];
+                    aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.DescripcionART = (string)datos.Lector["Descripcion"];
+                    aux.Precio = (decimal)datos.Lector["Precio"];
 
-                    aux.Categoria.DescripcionCategoria = (string)lector["Categoria"];
-                    aux.UrlImagen = (string)lector["ImagenUrl"];
+                    aux.Categoria.DescripcionCategoria = (string)datos.Lector["Categoria"];
+                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
 
                     lista.Add(aux);
                    
                 }
-                conexion.Close();
                 return lista;
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-        }
-        public string Conexion(string conexion)
+            finally
             {
-                conexion = "server=(local)\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true";
-                return conexion;
-            } 
+                datos.cerrarConexion();
+            }
+        }
+    
         
     }
 }
