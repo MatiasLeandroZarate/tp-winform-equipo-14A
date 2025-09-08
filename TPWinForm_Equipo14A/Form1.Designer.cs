@@ -29,25 +29,39 @@
         private void InitializeComponent()
         {
             this.dgvART = new System.Windows.Forms.DataGridView();
+            this.pbx = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvART)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvART
             // 
             this.dgvART.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvART.Location = new System.Drawing.Point(127, 88);
+            this.dgvART.Location = new System.Drawing.Point(12, 71);
             this.dgvART.Name = "dgvART";
             this.dgvART.RowHeadersWidth = 51;
-            this.dgvART.Size = new System.Drawing.Size(335, 150);
+            this.dgvART.Size = new System.Drawing.Size(495, 167);
             this.dgvART.TabIndex = 0;
+            this.dgvART.SelectionChanged += new System.EventHandler(this.dgvART_SelectionChanged);
+            // 
+            // pbx
+            // 
+            this.pbx.Location = new System.Drawing.Point(524, 71);
+            this.pbx.Name = "pbx";
+            this.pbx.Size = new System.Drawing.Size(252, 167);
+            this.pbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbx.TabIndex = 2;
+            this.pbx.TabStop = false;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(509, 271);
+            this.ClientSize = new System.Drawing.Size(848, 331);
+            this.Controls.Add(this.pbx);
             this.Controls.Add(this.dgvART);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvART)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbx)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -55,6 +69,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvART;
+        private System.Windows.Forms.PictureBox pbx;
     }
 }
 
