@@ -29,39 +29,46 @@
         private void InitializeComponent()
         {
             this.dgvART = new System.Windows.Forms.DataGridView();
-            this.pbx = new System.Windows.Forms.PictureBox();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvART)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvART
             // 
+            this.dgvART.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvART.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgvART.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgvART.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvART.Location = new System.Drawing.Point(12, 71);
             this.dgvART.Name = "dgvART";
             this.dgvART.RowHeadersWidth = 51;
-            this.dgvART.Size = new System.Drawing.Size(1000, 167);
+            this.dgvART.Size = new System.Drawing.Size(754, 211);
             this.dgvART.TabIndex = 0;
             this.dgvART.SelectionChanged += new System.EventHandler(this.dgvART_SelectionChanged);
             // 
-            // pbx
+            // pbxImagen
             // 
-            this.pbx.Location = new System.Drawing.Point(1040, 71);
-            this.pbx.Name = "pbx";
-            this.pbx.Size = new System.Drawing.Size(252, 167);
-            this.pbx.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbx.TabIndex = 2;
-            this.pbx.TabStop = false;
+            this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxImagen.Location = new System.Drawing.Point(950, 71);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(252, 211);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImagen.TabIndex = 2;
+            this.pbxImagen.TabStop = false;
             // 
             // Form1
             // 
-            this.ClientSize = new System.Drawing.Size(1369, 302);
-            this.Controls.Add(this.pbx);
+            this.ClientSize = new System.Drawing.Size(1369, 749);
+            this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.dgvART);
             this.Name = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvART)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbx)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -69,7 +76,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvART;
-        private System.Windows.Forms.PictureBox pbx;
+        private System.Windows.Forms.PictureBox pbxImagen;
     }
 }
 

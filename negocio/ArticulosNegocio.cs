@@ -25,12 +25,6 @@ namespace negocio
                 while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
-                    /*
-                    aux.CodigoArticulo = (string)lector["Codigo"];
-                    aux.Nombre = (string)lector["Nombre"];
-                    aux.Descripcion = (string)lector["Descripcion"];
-                    aux.Precio = (decimal)lector["Precio"];
-                    */
                     aux.ID = (int)datos.Lector["Id"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.Precio = (decimal)datos.Lector["Precio"];

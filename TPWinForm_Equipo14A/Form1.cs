@@ -24,12 +24,10 @@ namespace TPWinForm_Equipo14A
         private void Form1_Load_1(object sender, EventArgs e)
         {
             ArticulosNegocio articuloNegocio = new ArticulosNegocio();
-            //listaArticulos = articuloNegocio.listar();
             listaArticulos = articuloNegocio.VerDetalle();
             dgvART.DataSource = listaArticulos;
             dgvART.Columns[6].Visible = false;
             cargarImagen(listaArticulos[0].UrlImagen);
-
         }
 
         private void dgvART_SelectionChanged(object sender, EventArgs e)
@@ -42,11 +40,11 @@ namespace TPWinForm_Equipo14A
         {
             try
             {
-                pbx.Load(imagen);
+                pbxImagen.Load(imagen);
             }
             catch (Exception)
             {
-                pbx.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
+                pbxImagen.Load("https://efectocolibri.com/wp-content/uploads/2021/01/placeholder.png");
             }
         }
     }
