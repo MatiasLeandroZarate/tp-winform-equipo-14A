@@ -19,16 +19,18 @@ namespace negocio
 
             try
             {
-                datos.setearQuery("Select ART.Id, ART.Nombre , ART.Precio, I.ImagenUrl from ARTICULOS as ART inner join IMAGENES as I on ART.Id = I.IdArticulo");
+                datos.setearQuery("Select Id, Codigo,Nombre,Descripcion,Precio from ARTICULOS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
                     aux.ID = (int)datos.Lector["Id"];
+                    aux.CodigoArticulo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.DescripcionART = (string)datos.Lector["Descripcion"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    
 
                     lista.Add(aux);
                 }
@@ -56,13 +58,26 @@ namespace negocio
         {
 
         }
+        */
 
-        public void Eliminar()
+        public void Eliminar(int id)
         {
+            try
+            {
+                AccesoBD datos = new AccesoBD();
+                datos.setearQuery("Delete from ARTICULOS where Id = @Id");
+                datos.setearParametro("@id",id);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
         }
 
-        }*/
+        
         public List<Articulos> VerDetalle()
         {
             List<Articulos> lista = new List<Articulos>();

@@ -30,5 +30,12 @@ namespace TPWinForm_Equipo14A
             ventana.MdiParent = this;
             ventana.Show();
         }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEliminar ventana = new frmEliminar();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
     }
 }
