@@ -19,7 +19,7 @@ namespace TPWinForm_Equipo14A
 
         private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form1 ventana = new Form1();
+            frmLista ventana = new frmLista();
             ventana.MdiParent = this;
             ventana.Show();
         }
@@ -27,6 +27,13 @@ namespace TPWinForm_Equipo14A
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAgregar ventana = new frmAgregar();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEliminar ventana = new frmEliminar();
             ventana.MdiParent = this;
             ventana.Show();
         }

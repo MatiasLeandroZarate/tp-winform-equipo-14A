@@ -20,6 +20,10 @@ namespace negocio
             conexion = new SqlConnection("server=(local)\\SQLEXPRESS; database=CATALOGO_P3_DB; integrated security=true");
             comando = new SqlCommand();
         }
+        public void setearParametro(string nombre, object valor)
+        {
+            comando.Parameters.AddWithValue(nombre, valor);
+        }
         public void setearQuery(string consulta)
         {
             comando.CommandType = System.Data.CommandType.Text;

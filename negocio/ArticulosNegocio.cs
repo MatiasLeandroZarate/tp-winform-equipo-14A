@@ -19,16 +19,18 @@ namespace negocio
 
             try
             {
-                datos.setearQuery("Select ART.Id, ART.Nombre , ART.Precio, I.ImagenUrl from ARTICULOS as ART inner join IMAGENES as I on ART.Id = I.IdArticulo");
+                datos.setearQuery("Select Id, Codigo,Nombre,Descripcion,Precio from ARTICULOS");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
                     aux.ID = (int)datos.Lector["Id"];
+                    aux.CodigoArticulo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
+                    aux.DescripcionART = (string)datos.Lector["Descripcion"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    
 
                     lista.Add(aux);
                 }
@@ -73,13 +75,43 @@ namespace negocio
         {
 
         }
-
-        public void Eliminar()
+        */
+        // EN LA BASE DE DATOS, NO EXISTE UN CAMPO "Activo", HAY QUE CREARLO. 
+        //IGUALMENTE SE DEJA EL METODO POR SI SE DESEA IMPLEMENTAR.
+        /*
+        public void EliminarLogico(int id)
         {
+            try
+            {
+                AccesoBD datos = new AccesoBD();
+                datos.setearQuery("Update ARTICULOS set Activo = 0 where Id = @Id");
+                datos.setearParametro("@id", id);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        */
+        public void EliminarDB(int id)
+        {
+            try
+            {
+                AccesoBD datos = new AccesoBD();
+                datos.setearQuery("Delete from ARTICULOS where Id = @Id");
+                datos.setearParametro("@id",id);
+                datos.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
         }
 
-        }*/
+        
         public List<Articulos> VerDetalle()
         {
             List<Articulos> lista = new List<Articulos>();
@@ -88,8 +120,8 @@ namespace negocio
             try
             {
                 datos.setearQuery("Select ART.Id ,ART.Codigo,M.Descripcion as Marca,  ART.Nombre , ART.Descripcion, ART.Precio,  C.Descripcion as Categoria, I.ImagenUrl from ARTICULOS as ART"
-                + " inner join IMAGENES as I on ART.Id = I.IdArticulo"
-                + " inner join MARCAS as M on ART.IdMarca = M.Id"
+                + " full join IMAGENES as I on ART.Id = I.IdArticulo"
+                + " full join MARCAS as M on ART.IdMarca = M.Id"
                 + " inner join CATEGORIAS as C on ART.IdCategoria = C.Id");
                 datos.ejecutarLectura();
 
@@ -98,8 +130,8 @@ namespace negocio
                     Articulos aux = new Articulos();
                     aux.Marca = new Marca();
                     aux.Categoria = new Categoria();
-                   
 
+                    
                     aux.ID = (int)datos.Lector["Id"];
                     aux.CodigoArticulo = (string)datos.Lector["Codigo"];
 
@@ -110,7 +142,9 @@ namespace negocio
                     aux.Precio = (decimal)datos.Lector["Precio"];
 
                     aux.Categoria.DescripcionCategoria = (string)datos.Lector["Categoria"];
-                    aux.UrlImagen = (string)datos.Lector["ImagenUrl"];
+                    
+                if (!(datos.Lector["ImagenUrl"] is DBNull))
+                    { aux.UrlImagen = (string)datos.Lector["ImagenUrl"]; }
 
                     lista.Add(aux);
                    
