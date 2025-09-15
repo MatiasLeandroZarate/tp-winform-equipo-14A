@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
 
 namespace TPWinForm_Equipo14A
 {
@@ -24,18 +26,50 @@ namespace TPWinForm_Equipo14A
 
         private void frmAgregar_Load(object sender, EventArgs e)
         {
-            ///Menu Desplegable de Marca
-            cboMarca.Items.Add("Samsung");
-            cboMarca.Items.Add("Sony");
-            cboMarca.Items.Add("Apple");
-            cboMarca.Items.Add("Huawei");
-            cboMarca.Items.Add("Motorola");
+            MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
-            ///Menu Desplegable de Categoría
-            cboCategoria.Items.Add("Celulares");
-            cboCategoria.Items.Add("Media");
-            cboCategoria.Items.Add("Televisores");
-            cboCategoria.Items.Add("Audio");
+            try
+            {
+                cboMarca.DataSource = marcaNegocio.listar();
+                cboCategoria.DataSource = categoriaNegocio.listar();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Articulos nuevo = new Articulos();
+            ArticulosNegocio negocio = new ArticulosNegocio();
+
+            try
+            {
+                nuevo.CodigoArticulo = txtCodArt.Text;
+                nuevo.Nombre = txtNombreArt.Text;
+                nuevo.Marca = (Marca)cboMarca.SelectedItem;
+                nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                nuevo.UrlImagen = txtURLImagen.Text;
+                nuevo.DescripcionART = txtDescArt.Text;
+                nuevo.Precio = decimal.Parse(txtPrecio.Text);
+
+                negocio.Agregar(nuevo);
+                MessageBox.Show("Agregado Exitosamente");
+                Close();
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

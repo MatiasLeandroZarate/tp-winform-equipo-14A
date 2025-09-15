@@ -9,5 +9,34 @@ namespace negocio
 {
     public class MarcaNegocio
     {
+        public List<Marca> listar()
+        {
+            List<Marca> lista = new List<Marca>();
+            AccesoBD datos = new AccesoBD();
+
+            try
+            {
+                datos.setearQuery("select Id, Descripcion from MARCAS");
+                datos.ejecutarLectura();
+
+                while (datos.Lector.Read())
+                {
+                    Marca aux = new Marca();
+                    aux.ID = (int)datos.Lector["Id"];
+                    aux.DescripcionMarca = (string)datos.Lector["Descripcion"];
+
+                    lista.Add(aux);
+                }
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }
