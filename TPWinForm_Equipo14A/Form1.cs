@@ -20,8 +20,12 @@ namespace TPWinForm_Equipo14A
             InitializeComponent();
         }
 
-       
+
         private void frmLista_Load(object sender, EventArgs e)
+        {
+            cargar();
+        }
+        private void cargar()
         {
             ArticulosNegocio articuloNegocio = new ArticulosNegocio();
             listaArticulos = articuloNegocio.VerDetalle();
@@ -30,14 +34,14 @@ namespace TPWinForm_Equipo14A
             cargarImagen(listaArticulos[0].UrlImagen);
         }
 
-        private void dgvART_SelectionChanged(object sender, EventArgs e)
+        public void dgvART_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvART.CurrentRow != null)
             {
                 Articulos seleccionado = (Articulos)dgvART.CurrentRow.DataBoundItem;
                 cargarImagen(seleccionado.UrlImagen);
             }
-            
+
         }
 
         private void cargarImagen(string imagen)
@@ -54,12 +58,12 @@ namespace TPWinForm_Equipo14A
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-        
+
         }
 
         private void tbxNombre_TextChanged(object sender, EventArgs e)
         {
-         Filtrar();
+            Filtrar();
         }
 
         private void tbxMarca_TextChanged(object sender, EventArgs e)
@@ -99,6 +103,9 @@ namespace TPWinForm_Equipo14A
 
             frmModificar ventana = new frmModificar(seleccionado);
             ventana.ShowDialog();
+            cargar();
+
+            }
         }
     }
-}
+

@@ -127,18 +127,21 @@ namespace negocio
             try
             {
                 datos.setearQuery("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, Precio = @precio where id = @id");
+                
                 datos.setearParametro("@codigo", modificar.CodigoArticulo);
                 datos.setearParametro("@nombre", modificar.Nombre);
                 datos.setearParametro("@descripcion", modificar.DescripcionART);
                 datos.setearParametro("@idMarca", modificar.Marca.ID);
                 datos.setearParametro("@idCategoria", modificar.Categoria.ID);
                 datos.setearParametro("@precio", modificar.Precio);
+                datos.setearParametro("@id", modificar.ID);
                 datos.ejecutarAccion();
-
+                /*
                 datosImagen.setearQuery("update IMAGENES set ImagenUrl = @imagenUrl where Id = @id");
                 datosImagen.setearParametro("@imagenUrl", modificar.UrlImagen);
+             
                 datosImagen.ejecutarAccion();
-
+                */
             }
             catch (Exception ex)
             {

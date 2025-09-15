@@ -1,6 +1,4 @@
-﻿using dominio;
-using negocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dominio;
+using negocio;
+
 
 namespace TPWinForm_Equipo14A
 {
@@ -67,7 +68,7 @@ namespace TPWinForm_Equipo14A
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ArticulosNegocio negocio = new ArticulosNegocio();
-
+    
             try
             { 
                 articulo.CodigoArticulo = txtCodArt.Text;
