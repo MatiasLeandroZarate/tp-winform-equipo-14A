@@ -89,6 +89,7 @@ namespace TPWinForm_Equipo14A
 
             dgvART.DataSource = null;
             dgvART.DataSource = listaFiltrada;
+            dgvART.Columns[6].Visible = false;
         }
     }
 }

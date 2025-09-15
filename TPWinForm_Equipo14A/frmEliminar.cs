@@ -41,24 +41,11 @@ namespace TPWinForm_Equipo14A
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            ArticulosNegocio negocio = new ArticulosNegocio();
-            Articulos seleccionado;
-            try
-            {
-                DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar el artículo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (respuesta == DialogResult.Yes)
-                {
-                    seleccionado = (Articulos)dgvEliminar.CurrentRow.DataBoundItem;
-                    negocio.Eliminar(seleccionado.ID);
-                    cargar();
-
-                }    
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
-            }
+           Eliminar();
+        }
+        private void btnLogico_Click(object sender, EventArgs e)
+        {
+            Eliminar(true);
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -72,5 +59,30 @@ namespace TPWinForm_Equipo14A
             
         }
 
+        private void Eliminar( bool logico = false)
+        {
+            ArticulosNegocio negocio = new ArticulosNegocio();
+            Articulos seleccionado;
+            try
+            {
+                DialogResult respuesta = MessageBox.Show("¿Seguro que desea eliminar el artículo?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulos)dgvEliminar.CurrentRow.DataBoundItem;
+                    if(logico)
+                        MessageBox.Show("Eliminación lógica no implementada");
+                    // negocio.EliminarLogico(seleccionado.ID);
+                    else
+                        negocio.EliminarDB(seleccionado.ID);
+                    cargar();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
     }
 }
