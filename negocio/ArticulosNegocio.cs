@@ -136,12 +136,14 @@ namespace negocio
                 datos.setearParametro("@precio", modificar.Precio);
                 datos.setearParametro("@id", modificar.ID);
                 datos.ejecutarAccion();
-                /*
-                datosImagen.setearQuery("update IMAGENES set ImagenUrl = @imagenUrl where Id = @id");
+                
+                datosImagen.setearQuery("update IMAGENES set ImagenUrl = @imagenUrl where IdArticulo = @id");
                 datosImagen.setearParametro("@imagenUrl", modificar.UrlImagen);
-             
+                datosImagen.setearParametro("@id", modificar.ID);
+
                 datosImagen.ejecutarAccion();
-                */
+                
+                
             }
             catch (Exception ex)
             {
