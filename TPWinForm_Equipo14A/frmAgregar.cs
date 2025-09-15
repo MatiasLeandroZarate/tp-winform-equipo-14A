@@ -19,11 +19,6 @@ namespace TPWinForm_Equipo14A
             InitializeComponent();
         }
 
-        private void cboMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmAgregar_Load(object sender, EventArgs e)
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
@@ -32,11 +27,15 @@ namespace TPWinForm_Equipo14A
             try
             {
                 cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.ValueMember = "ID";
+                cboMarca.DisplayMember = "DescripcionMarca";
+
                 cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.ValueMember = "ID";
+                cboCategoria.DisplayMember = "DescripcionCategoria";
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.ToString());
             }
 
@@ -56,8 +55,8 @@ namespace TPWinForm_Equipo14A
             {
                 nuevo.CodigoArticulo = txtCodArt.Text;
                 nuevo.Nombre = txtNombreArt.Text;
-                nuevo.Marca = (Marca)cboMarca.SelectedItem;
-                nuevo.Categoria = (Categoria)cboCategoria.SelectedItem;
+                nuevo.Marca.ID = (int)cboMarca.SelectedValue;
+                nuevo.Categoria.ID = (int)cboCategoria.SelectedValue;
                 nuevo.UrlImagen = txtURLImagen.Text;
                 nuevo.DescripcionART = txtDescArt.Text;
                 nuevo.Precio = decimal.Parse(txtPrecio.Text);

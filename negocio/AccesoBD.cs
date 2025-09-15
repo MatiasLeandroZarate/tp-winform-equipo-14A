@@ -26,6 +26,7 @@ namespace negocio
         }
         public void setearQuery(string consulta)
         {
+            comando.Parameters.Clear();
             comando.CommandType = System.Data.CommandType.Text;
             comando.CommandText = consulta;
         }
@@ -68,6 +69,13 @@ namespace negocio
             conexion.Close();
         }
 
-
+        public void cerrarLector()
+        {
+            if (lector != null)
+            {
+                lector.Close();
+                lector = null;
+            }
+        }
     }
 }

@@ -33,9 +33,8 @@ namespace TPWinForm_Equipo14A
                 dgvEliminar.Columns[6].Visible = false;
             }
             catch (Exception ex)
-            {
-
-                throw ex;
+            { 
+                MessageBox.Show(ex.ToString());
             }
 
         }
@@ -81,7 +80,6 @@ namespace TPWinForm_Equipo14A
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                throw;
             }
         }
     }

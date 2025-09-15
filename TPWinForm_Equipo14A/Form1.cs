@@ -91,5 +91,14 @@ namespace TPWinForm_Equipo14A
             dgvART.DataSource = listaFiltrada;
             dgvART.Columns[6].Visible = false;
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Articulos seleccionado;
+            seleccionado = (Articulos)dgvART.CurrentRow.DataBoundItem;
+
+            frmModificar ventana = new frmModificar(seleccionado);
+            ventana.ShowDialog();
+        }
     }
 }
