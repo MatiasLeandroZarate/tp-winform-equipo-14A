@@ -64,11 +64,32 @@ namespace TPWinForm_Equipo14A
                 negocio.Agregar(nuevo);
                 MessageBox.Show("Agregado Exitosamente");
                 Close();
+
             }
             catch (Exception ex)
             { 
                 MessageBox.Show(ex.ToString());
             }
         }
+        
+        /*
+        private void cargar()
+        {
+            ArticulosNegocio negocio = new ArticulosNegocio();
+            try
+            {
+                ArticulosNegocio articuloNegocio = new ArticulosNegocio();
+                listaArticulos = articuloNegocio.listaART();
+                ListaART.DataSource = listaArticulos;
+                dgvListaART.Columns[4].Visible = false;
+                dgvListaART.Columns[5].Visible = false;
+                dgvEliminar.Columns[6].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        */
     }
 }

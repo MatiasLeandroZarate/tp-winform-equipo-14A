@@ -1,6 +1,6 @@
 ﻿namespace TPWinForm_Equipo14A
 {
-    partial class frmLista
+    partial class frmListado
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -43,7 +43,8 @@
             // 
             // dgvART
             // 
-            this.dgvART.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvART.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvART.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvART.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
@@ -54,17 +55,16 @@
             this.dgvART.Name = "dgvART";
             this.dgvART.RowHeadersWidth = 51;
             this.dgvART.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvART.Size = new System.Drawing.Size(754, 211);
+            this.dgvART.Size = new System.Drawing.Size(778, 211);
             this.dgvART.TabIndex = 0;
             this.dgvART.SelectionChanged += new System.EventHandler(this.dgvART_SelectionChanged);
             // 
             // pbxImagen
             // 
-            this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pbxImagen.Location = new System.Drawing.Point(950, 71);
+            this.pbxImagen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbxImagen.Location = new System.Drawing.Point(858, 71);
             this.pbxImagen.Name = "pbxImagen";
-            this.pbxImagen.Size = new System.Drawing.Size(252, 211);
+            this.pbxImagen.Size = new System.Drawing.Size(237, 211);
             this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxImagen.TabIndex = 2;
             this.pbxImagen.TabStop = false;
@@ -74,7 +74,7 @@
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(13, 20);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(72, 13);
+            this.lblFiltro.Size = new System.Drawing.Size(90, 16);
             this.lblFiltro.TabIndex = 3;
             this.lblFiltro.Text = "Filtro Rápido: ";
             // 
@@ -82,7 +82,7 @@
             // 
             this.tbxNombre.Location = new System.Drawing.Point(91, 45);
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(164, 20);
+            this.tbxNombre.Size = new System.Drawing.Size(164, 22);
             this.tbxNombre.TabIndex = 6;
             this.tbxNombre.TextChanged += new System.EventHandler(this.tbxNombre_TextChanged);
             // 
@@ -91,7 +91,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(35, 47);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(50, 13);
+            this.lblNombre.Size = new System.Drawing.Size(62, 16);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Nombre: ";
             // 
@@ -99,7 +99,7 @@
             // 
             this.tbxMarca.Location = new System.Drawing.Point(358, 45);
             this.tbxMarca.Name = "tbxMarca";
-            this.tbxMarca.Size = new System.Drawing.Size(164, 20);
+            this.tbxMarca.Size = new System.Drawing.Size(164, 22);
             this.tbxMarca.TabIndex = 8;
             this.tbxMarca.TextChanged += new System.EventHandler(this.tbxMarca_TextChanged);
             // 
@@ -108,7 +108,7 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Location = new System.Drawing.Point(309, 47);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(43, 13);
+            this.lblMarca.Size = new System.Drawing.Size(51, 16);
             this.lblMarca.TabIndex = 9;
             this.lblMarca.Text = "Marca: ";
             // 
@@ -124,6 +124,7 @@
             // 
             // btnModificar
             // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnModificar.Location = new System.Drawing.Point(12, 311);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(110, 23);
@@ -132,9 +133,9 @@
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // frmLista
+            // frmListado
             // 
-            this.ClientSize = new System.Drawing.Size(1369, 749);
+            this.ClientSize = new System.Drawing.Size(1135, 379);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.lblMarca);
@@ -144,8 +145,9 @@
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.dgvART);
-            this.Name = "frmLista";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.MinimumSize = new System.Drawing.Size(1153, 426);
+            this.Name = "frmListado";
+            this.Text = "Listado";
             this.Load += new System.EventHandler(this.frmLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvART)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();

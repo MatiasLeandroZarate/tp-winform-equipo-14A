@@ -12,10 +12,10 @@ using negocio;
 
 namespace TPWinForm_Equipo14A
 {
-    public partial class frmLista : Form
+    public partial class frmListado : Form
     {
         private List<Articulos> listaArticulos;
-        public frmLista()
+        public frmListado()
         {
             InitializeComponent();
         }
@@ -30,6 +30,7 @@ namespace TPWinForm_Equipo14A
             ArticulosNegocio articuloNegocio = new ArticulosNegocio();
             listaArticulos = articuloNegocio.VerDetalle();
             dgvART.DataSource = listaArticulos;
+            dgvART.Columns[4].Visible = false;
             dgvART.Columns[6].Visible = false;
             cargarImagen(listaArticulos[0].UrlImagen);
         }
@@ -96,14 +97,9 @@ namespace TPWinForm_Equipo14A
             dgvART.Columns[6].Visible = false;
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            Articulos seleccionado;
-            seleccionado = (Articulos)dgvART.CurrentRow.DataBoundItem;
-
-            frmModificar ventana = new frmModificar(seleccionado);
-            ventana.ShowDialog();
-            cargar();
+             private void btnModificar_Click(object sender, EventArgs e)
+             {
+            
 
             }
         }

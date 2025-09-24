@@ -17,10 +17,10 @@ namespace TPWinForm_Equipo14A
         {
             InitializeComponent();
         }
-
+/*
         private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLista ventana = new frmLista();
+            frmListado ventana = new frmListado();
             ventana.ShowDialog();
         }
 
@@ -34,6 +34,28 @@ namespace TPWinForm_Equipo14A
         {
             frmEliminar ventana = new frmEliminar();
             ventana.ShowDialog();
+        }
+
+*/
+        private void btnListado_Click(object sender, EventArgs e)
+        {
+            frmListado ventana = new frmListado();
+            ventana.ShowDialog();
+        }
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            ListaArticulos ventana = new ListaArticulos();
+            ventana.ShowDialog();
+        }
+
+        private void btnMarcas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

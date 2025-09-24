@@ -28,83 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.agregarRegistroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.listadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.btnListado = new System.Windows.Forms.Button();
+            this.btnArticulos = new System.Windows.Forms.Button();
+            this.btnMarcas = new System.Windows.Forms.Button();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // btnListado
             // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.Info;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarRegistroToolStripMenuItem,
-            this.listadoToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(589, 25);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btnListado.Location = new System.Drawing.Point(175, 58);
+            this.btnListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnListado.Name = "btnListado";
+            this.btnListado.Size = new System.Drawing.Size(179, 82);
+            this.btnListado.TabIndex = 2;
+            this.btnListado.Text = "Listado completo";
+            this.btnListado.UseVisualStyleBackColor = true;
+            this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
             // 
-            // agregarRegistroToolStripMenuItem
+            // btnArticulos
             // 
-            this.agregarRegistroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
-            this.agregarRegistroToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarRegistroToolStripMenuItem.Name = "agregarRegistroToolStripMenuItem";
-            this.agregarRegistroToolStripMenuItem.Size = new System.Drawing.Size(73, 21);
-            this.agregarRegistroToolStripMenuItem.Text = "Artículos";
+            this.btnArticulos.Location = new System.Drawing.Point(175, 197);
+            this.btnArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnArticulos.Name = "btnArticulos";
+            this.btnArticulos.Size = new System.Drawing.Size(179, 82);
+            this.btnArticulos.TabIndex = 3;
+            this.btnArticulos.Text = "Artículos";
+            this.btnArticulos.UseVisualStyleBackColor = true;
+            this.btnArticulos.Click += new System.EventHandler(this.btnArticulos_Click);
             // 
-            // agregarToolStripMenuItem
+            // btnMarcas
             // 
-            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.agregarToolStripMenuItem.Text = "Agregar";
-            this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
+            this.btnMarcas.Location = new System.Drawing.Point(175, 320);
+            this.btnMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMarcas.Name = "btnMarcas";
+            this.btnMarcas.Size = new System.Drawing.Size(179, 82);
+            this.btnMarcas.TabIndex = 4;
+            this.btnMarcas.Text = "Marcas";
+            this.btnMarcas.UseVisualStyleBackColor = true;
+            this.btnMarcas.Click += new System.EventHandler(this.btnMarcas_Click);
             // 
-            // eliminarToolStripMenuItem
+            // btnCategoria
             // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // listadoToolStripMenuItem
-            // 
-            this.listadoToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
-            this.listadoToolStripMenuItem.Text = "Listado";
-            this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
+            this.btnCategoria.Location = new System.Drawing.Point(175, 448);
+            this.btnCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(179, 82);
+            this.btnCategoria.TabIndex = 5;
+            this.btnCategoria.Text = "Categorias";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(589, 450);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.ClientSize = new System.Drawing.Size(516, 617);
+            this.Controls.Add(this.btnCategoria);
+            this.Controls.Add(this.btnMarcas);
+            this.Controls.Add(this.btnArticulos);
+            this.Controls.Add(this.btnListado);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(534, 664);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(534, 664);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarRegistroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
+        private System.Windows.Forms.Button btnListado;
+        private System.Windows.Forms.Button btnArticulos;
+        private System.Windows.Forms.Button btnMarcas;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }

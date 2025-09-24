@@ -12,7 +12,7 @@ namespace negocio
 {
     public class ArticulosNegocio
     {
-        public List<Articulos> listar()
+        public List<Articulos> listaART()
         {
             List<Articulos> lista = new List<Articulos>();
             AccesoBD datos = new AccesoBD();
@@ -20,37 +20,28 @@ namespace negocio
 
             try
             {
-                datos.setearQuery("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, " +
-                                  "M.Descripcion AS MarcaDescripcion, M.Id as IdMarca, " +
-                                  "C.Descripcion AS CategoriaDescripcion, C.Id as IdCategoria FROM ARTICULOS A " + 
-                                  "INNER JOIN MARCAS M ON M.Id = A.IdMarca " +
-                                  "INNER JOIN CATEGORIAS C ON C.Id = A.IdCategoria");
+                datos.setearQuery("SELECT Id, Codigo, Nombre, Descripcion, IdMarca, IdCategoria, Precio  FROM [CATALOGO_P3_DB].[dbo].[ARTICULOS]");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
                 {
                     Articulos aux = new Articulos();
-                    Marca auxM = new Marca();
-                    Categoria auxC = new Categoria();
-
+                   
                     aux.ID = (int)datos.Lector["Id"];
                     aux.CodigoArticulo = (string)datos.Lector["Codigo"];
                     aux.Nombre = (string)datos.Lector["Nombre"];
                     aux.DescripcionART = (string)datos.Lector["Descripcion"];
-                    auxM.ID = (int)datos.Lector["IdMarca"];
-                    auxM.DescripcionMarca = (string)datos.Lector["MarcaDescripcion"];
-                    auxC.ID = (int)datos.Lector["IdCategoria"];
-                    auxC.DescripcionCategoria = (string)datos.Lector["CategoriaDescripcion"];
+                    aux.IDMarca = (int)datos.Lector["IdMarca"];
+                    aux.IDCategoria = (int)datos.Lector["IdCategoria"];
                     aux.Precio = (decimal)datos.Lector["Precio"];
-                    aux.UrlImagen = "";
+                   // aux.UrlImagen = "";
 
-                    aux.Marca = auxM;
-                    aux.Categoria = auxC;
 
                     lista.Add(aux);
                 }
                 datos.cerrarLector();
 
+                /*
                 datosImagen.setearQuery("SELECT IdArticulo, ImagenUrl FROM IMAGENES");
                 datosImagen.ejecutarLectura();
 
@@ -66,6 +57,7 @@ namespace negocio
                     }
                 }
                 datosImagen.cerrarLector();
+                */
 
                 return lista;
             }
@@ -76,7 +68,7 @@ namespace negocio
             finally
             {
                 datos.cerrarConexion();
-                datosImagen.cerrarConexion();
+               // datosImagen.cerrarConexion();
             }
         }
         
