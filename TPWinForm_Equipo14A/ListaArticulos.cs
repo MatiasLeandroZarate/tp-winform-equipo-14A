@@ -88,6 +88,7 @@ namespace TPWinForm_Equipo14A
         {
             frmAgregar ventana = new frmAgregar();
             ventana.ShowDialog();
+            cargar();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

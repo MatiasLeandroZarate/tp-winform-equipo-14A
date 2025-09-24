@@ -35,8 +35,6 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.tbxMarca = new System.Windows.Forms.TextBox();
             this.lblMarca = new System.Windows.Forms.Label();
-            this.btnFiltrar = new System.Windows.Forms.Button();
-            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvART)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.SuspendLayout();
@@ -112,32 +110,9 @@
             this.lblMarca.TabIndex = 9;
             this.lblMarca.Text = "Marca: ";
             // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Location = new System.Drawing.Point(590, 42);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
-            this.btnFiltrar.TabIndex = 10;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(12, 311);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(110, 23);
-            this.btnModificar.TabIndex = 11;
-            this.btnModificar.Text = "Modificar Artículo";
-            this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
             // frmListado
             // 
             this.ClientSize = new System.Drawing.Size(1135, 379);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.tbxMarca);
             this.Controls.Add(this.lblNombre);
@@ -165,8 +140,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox tbxMarca;
         private System.Windows.Forms.Label lblMarca;
-        private System.Windows.Forms.Button btnFiltrar;
-        private System.Windows.Forms.Button btnModificar;
     }
 }
 

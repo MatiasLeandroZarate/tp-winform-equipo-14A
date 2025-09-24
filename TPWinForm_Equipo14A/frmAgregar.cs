@@ -51,6 +51,12 @@ namespace TPWinForm_Equipo14A
             Articulos nuevo = new Articulos();
             ArticulosNegocio negocio = new ArticulosNegocio();
 
+            string mensajeError;
+            if (!ValidarArticulo(txtCodArt.Text, txtNombreArt.Text, txtDescArt.Text, txtPrecio.Text, out mensajeError))
+            {
+                MessageBox.Show(mensajeError);
+                return;
+            }
             try
             {
                 nuevo.CodigoArticulo = txtCodArt.Text;
@@ -59,7 +65,10 @@ namespace TPWinForm_Equipo14A
                 nuevo.Categoria.ID = (int)cboCategoria.SelectedValue;
                 nuevo.UrlImagen = txtURLImagen.Text;
                 nuevo.DescripcionART = txtDescArt.Text;
-                nuevo.Precio = decimal.Parse(txtPrecio.Text);
+                if (string.IsNullOrWhiteSpace(txtPrecio.Text))
+                    nuevo.Precio = 0;
+                else
+                    nuevo.Precio = decimal.Parse(txtPrecio.Text);
 
                 negocio.Agregar(nuevo);
                 MessageBox.Show("Agregado Exitosamente");
@@ -71,25 +80,48 @@ namespace TPWinForm_Equipo14A
                 MessageBox.Show(ex.ToString());
             }
         }
-        
-        /*
-        private void cargar()
+        public static bool ValidarArticulo(string codigo, string nombre, string descripcion, string precio, out string mensajeError)
         {
-            ArticulosNegocio negocio = new ArticulosNegocio();
-            try
+            mensajeError = "";
+
+        //El Isnullorwhitespace chequea si el valor ingresado es null o tiene solo espacios
+        //Isletterordigit chequea num y letras.
+            if (!string.IsNullOrWhiteSpace(codigo))
             {
-                ArticulosNegocio articuloNegocio = new ArticulosNegocio();
-                listaArticulos = articuloNegocio.listaART();
-                ListaART.DataSource = listaArticulos;
-                dgvListaART.Columns[4].Visible = false;
-                dgvListaART.Columns[5].Visible = false;
-                dgvEliminar.Columns[6].Visible = false;
+                if (codigo.Length != 3)
+                {
+                    mensajeError = "El código de artículo debe tener exactamente 3 caracteres si se ingresa.";
+                    return false;
+                }
+                foreach (char c in codigo)
+                {
+                    if (!char.IsLetterOrDigit(c))
+                    {
+                        mensajeError = "El código de artículo solo admite letras y números (sin caracteres especiales).";
+                        return false;
+                    }
+                }
             }
-            catch (Exception ex)
+
+            if (!string.IsNullOrWhiteSpace(nombre) && nombre.Length > 50)
             {
-                MessageBox.Show(ex.ToString());
+                mensajeError = "El nombre debe tener hasta 50 caracteres.";
+                return false;
             }
+
+            if (!string.IsNullOrWhiteSpace(descripcion) && descripcion.Length > 150)
+            {
+                mensajeError = "La descripción debe tener hasta 150 caracteres.";
+                return false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(precio) && (!decimal.TryParse(precio, out decimal p) || p < 0))
+            {
+                mensajeError = "El precio debe ser un número positivo";
+                return false;
+            }
+
+            return true;
         }
-        */
     }
 }

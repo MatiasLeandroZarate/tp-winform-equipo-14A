@@ -31,6 +31,7 @@ namespace TPWinForm_Equipo14A
         {
             MarcaNegocio marcaNegocio = new MarcaNegocio();
             CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+            
 
             try
             {
@@ -44,13 +45,17 @@ namespace TPWinForm_Equipo14A
 
                 if (articulo != null)
                 {
+                    //Hacer las validaciones
+
                     txtCodArt.Text = articulo.CodigoArticulo;
                     txtNombreArt.Text = articulo.Nombre;
                     txtURLImagen.Text = articulo.UrlImagen;
                     txtDescArt.Text = articulo.DescripcionART;
                     txtPrecio.Text = articulo.Precio.ToString();
-                    cboMarca.SelectedValue = articulo.Marca.ID;
-                    cboCategoria.SelectedValue = articulo.Categoria.ID;
+                    cboMarca.SelectedValue = articulo.IDMarca; //Trae la Marca en la lista
+                    //cboMarca.SelectedValue = articulo.Marca.ID;
+                    cboCategoria.SelectedValue = articulo.IDCategoria;
+                    //cboCategoria.SelectedValue = articulo.Categoria.ID;
 
                 }
             }
@@ -68,7 +73,13 @@ namespace TPWinForm_Equipo14A
         private void btnModificar_Click(object sender, EventArgs e)
         {
             ArticulosNegocio negocio = new ArticulosNegocio();
-    
+            
+        string mensajeError;
+        if (!frmAgregar.ValidarArticulo(txtCodArt.Text, txtNombreArt.Text, txtDescArt.Text, txtPrecio.Text, out mensajeError))
+        {
+            MessageBox.Show(mensajeError);
+            return;
+        }
             try
             { 
                 articulo.CodigoArticulo = txtCodArt.Text;
