@@ -50,12 +50,14 @@ namespace TPWinForm_Equipo14A
 
         private void btnMarcas_Click(object sender, EventArgs e)
         {
-
+            ListaMarca ventana = new ListaMarca ();
+            ventana.ShowDialog();
         }
 
         private void btnCategoria_Click(object sender, EventArgs e)
         {
-
+            ListaCategorias ventana = new ListaCategorias();
+            ventana.ShowDialog();
         }
     }
 }

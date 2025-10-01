@@ -36,10 +36,9 @@
             // 
             // btnListado
             // 
-            this.btnListado.Location = new System.Drawing.Point(175, 58);
-            this.btnListado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnListado.Location = new System.Drawing.Point(131, 47);
             this.btnListado.Name = "btnListado";
-            this.btnListado.Size = new System.Drawing.Size(179, 82);
+            this.btnListado.Size = new System.Drawing.Size(134, 67);
             this.btnListado.TabIndex = 2;
             this.btnListado.Text = "Listado completo";
             this.btnListado.UseVisualStyleBackColor = true;
@@ -47,10 +46,9 @@
             // 
             // btnArticulos
             // 
-            this.btnArticulos.Location = new System.Drawing.Point(175, 197);
-            this.btnArticulos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnArticulos.Location = new System.Drawing.Point(131, 160);
             this.btnArticulos.Name = "btnArticulos";
-            this.btnArticulos.Size = new System.Drawing.Size(179, 82);
+            this.btnArticulos.Size = new System.Drawing.Size(134, 67);
             this.btnArticulos.TabIndex = 3;
             this.btnArticulos.Text = "Artículos";
             this.btnArticulos.UseVisualStyleBackColor = true;
@@ -58,10 +56,9 @@
             // 
             // btnMarcas
             // 
-            this.btnMarcas.Location = new System.Drawing.Point(175, 320);
-            this.btnMarcas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMarcas.Location = new System.Drawing.Point(131, 260);
             this.btnMarcas.Name = "btnMarcas";
-            this.btnMarcas.Size = new System.Drawing.Size(179, 82);
+            this.btnMarcas.Size = new System.Drawing.Size(134, 67);
             this.btnMarcas.TabIndex = 4;
             this.btnMarcas.Text = "Marcas";
             this.btnMarcas.UseVisualStyleBackColor = true;
@@ -69,10 +66,9 @@
             // 
             // btnCategoria
             // 
-            this.btnCategoria.Location = new System.Drawing.Point(175, 448);
-            this.btnCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCategoria.Location = new System.Drawing.Point(131, 364);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(179, 82);
+            this.btnCategoria.Size = new System.Drawing.Size(134, 67);
             this.btnCategoria.TabIndex = 5;
             this.btnCategoria.Text = "Categorias";
             this.btnCategoria.UseVisualStyleBackColor = true;
@@ -80,19 +76,18 @@
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(516, 617);
+            this.ClientSize = new System.Drawing.Size(388, 508);
             this.Controls.Add(this.btnCategoria);
             this.Controls.Add(this.btnMarcas);
             this.Controls.Add(this.btnArticulos);
             this.Controls.Add(this.btnListado);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(534, 664);
+            this.MaximumSize = new System.Drawing.Size(404, 547);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(534, 664);
+            this.MinimumSize = new System.Drawing.Size(404, 547);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";

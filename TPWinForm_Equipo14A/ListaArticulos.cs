@@ -98,7 +98,6 @@ namespace TPWinForm_Equipo14A
 
         public void Eliminar()
         {
-            ListaArticulos lista = new ListaArticulos();
             ArticulosNegocio negocio = new ArticulosNegocio();
             Articulos seleccionado;
             try
