@@ -55,5 +55,21 @@ namespace TPWinForm_Equipo14A
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void frmModificarCategoria_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (categoria != null)
+                {
+                    txtDesc.Text = categoria.DescripcionCategoria;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

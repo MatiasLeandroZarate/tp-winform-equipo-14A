@@ -59,6 +59,7 @@
             // txtNombreArt
             // 
             this.txtNombreArt.Location = new System.Drawing.Point(381, 111);
+            this.txtNombreArt.MaxLength = 50;
             this.txtNombreArt.Name = "txtNombreArt";
             this.txtNombreArt.Size = new System.Drawing.Size(288, 20);
             this.txtNombreArt.TabIndex = 20;
@@ -113,6 +114,7 @@
             // txtURLImagen
             // 
             this.txtURLImagen.Location = new System.Drawing.Point(489, 167);
+            this.txtURLImagen.MaxLength = 1000;
             this.txtURLImagen.Name = "txtURLImagen";
             this.txtURLImagen.Size = new System.Drawing.Size(267, 20);
             this.txtURLImagen.TabIndex = 24;
@@ -167,6 +169,7 @@
             // txtDescArt
             // 
             this.txtDescArt.Location = new System.Drawing.Point(45, 221);
+            this.txtDescArt.MaxLength = 150;
             this.txtDescArt.Name = "txtDescArt";
             this.txtDescArt.Size = new System.Drawing.Size(492, 20);
             this.txtDescArt.TabIndex = 26;
@@ -183,9 +186,10 @@
             // txtCodArt
             // 
             this.txtCodArt.Location = new System.Drawing.Point(135, 111);
+            this.txtCodArt.MaxLength = 50;
             this.txtCodArt.Name = "txtCodArt";
             this.txtCodArt.Size = new System.Drawing.Size(168, 20);
-            this.txtCodArt.TabIndex = 19;
+            this.txtCodArt.TabIndex = 1;
             // 
             // lblTítuloModificar
             // 

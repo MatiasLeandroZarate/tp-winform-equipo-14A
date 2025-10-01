@@ -54,7 +54,7 @@
             this.dgvART.RowHeadersWidth = 51;
             this.dgvART.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvART.Size = new System.Drawing.Size(778, 211);
-            this.dgvART.TabIndex = 0;
+            this.dgvART.TabIndex = 3;
             this.dgvART.SelectionChanged += new System.EventHandler(this.dgvART_SelectionChanged);
             // 
             // pbxImagen
@@ -72,7 +72,7 @@
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Location = new System.Drawing.Point(13, 20);
             this.lblFiltro.Name = "lblFiltro";
-            this.lblFiltro.Size = new System.Drawing.Size(90, 16);
+            this.lblFiltro.Size = new System.Drawing.Size(72, 13);
             this.lblFiltro.TabIndex = 3;
             this.lblFiltro.Text = "Filtro Rápido: ";
             // 
@@ -80,8 +80,8 @@
             // 
             this.tbxNombre.Location = new System.Drawing.Point(91, 45);
             this.tbxNombre.Name = "tbxNombre";
-            this.tbxNombre.Size = new System.Drawing.Size(164, 22);
-            this.tbxNombre.TabIndex = 6;
+            this.tbxNombre.Size = new System.Drawing.Size(164, 20);
+            this.tbxNombre.TabIndex = 1;
             this.tbxNombre.TextChanged += new System.EventHandler(this.tbxNombre_TextChanged);
             // 
             // lblNombre
@@ -89,7 +89,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Location = new System.Drawing.Point(35, 47);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(62, 16);
+            this.lblNombre.Size = new System.Drawing.Size(50, 13);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Nombre: ";
             // 
@@ -97,8 +97,8 @@
             // 
             this.tbxMarca.Location = new System.Drawing.Point(358, 45);
             this.tbxMarca.Name = "tbxMarca";
-            this.tbxMarca.Size = new System.Drawing.Size(164, 22);
-            this.tbxMarca.TabIndex = 8;
+            this.tbxMarca.Size = new System.Drawing.Size(164, 20);
+            this.tbxMarca.TabIndex = 2;
             this.tbxMarca.TextChanged += new System.EventHandler(this.tbxMarca_TextChanged);
             // 
             // lblMarca
@@ -106,13 +106,13 @@
             this.lblMarca.AutoSize = true;
             this.lblMarca.Location = new System.Drawing.Point(309, 47);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(51, 16);
+            this.lblMarca.Size = new System.Drawing.Size(43, 13);
             this.lblMarca.TabIndex = 9;
             this.lblMarca.Text = "Marca: ";
             // 
             // frmListado
             // 
-            this.ClientSize = new System.Drawing.Size(1135, 379);
+            this.ClientSize = new System.Drawing.Size(1137, 387);
             this.Controls.Add(this.lblMarca);
             this.Controls.Add(this.tbxMarca);
             this.Controls.Add(this.lblNombre);
@@ -122,6 +122,7 @@
             this.Controls.Add(this.dgvART);
             this.MinimumSize = new System.Drawing.Size(1153, 426);
             this.Name = "frmListado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado";
             this.Load += new System.EventHandler(this.frmLista_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvART)).EndInit();

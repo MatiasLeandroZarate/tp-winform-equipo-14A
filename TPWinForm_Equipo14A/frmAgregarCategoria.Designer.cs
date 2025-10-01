@@ -41,7 +41,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(399, 159);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(153, 32);
-            this.btnCancelar.TabIndex = 49;
+            this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -52,7 +52,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(56, 159);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(153, 32);
-            this.btnAgregar.TabIndex = 48;
+            this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Aceptar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -69,9 +69,10 @@
             // txtDesc
             // 
             this.txtDesc.Location = new System.Drawing.Point(157, 94);
+            this.txtDesc.MaxLength = 50;
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(288, 20);
-            this.txtDesc.TabIndex = 46;
+            this.txtDesc.TabIndex = 1;
             // 
             // lblTítuloAgregar
             // 
@@ -99,7 +100,10 @@
             this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.txtDesc);
             this.Controls.Add(this.lblTítuloAgregar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAgregarCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Categoria";
             this.ResumeLayout(false);
             this.PerformLayout();

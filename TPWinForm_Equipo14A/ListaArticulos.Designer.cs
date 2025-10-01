@@ -50,13 +50,13 @@
             this.dgvListaART.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvListaART.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListaART.Location = new System.Drawing.Point(25, 65);
-            this.dgvListaART.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvListaART.Margin = new System.Windows.Forms.Padding(2);
             this.dgvListaART.MultiSelect = false;
             this.dgvListaART.Name = "dgvListaART";
             this.dgvListaART.RowHeadersWidth = 51;
             this.dgvListaART.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaART.Size = new System.Drawing.Size(677, 193);
-            this.dgvListaART.TabIndex = 1;
+            this.dgvListaART.TabIndex = 3;
             // 
             // lblMarca
             // 
@@ -71,10 +71,10 @@
             // tbxDESCR
             // 
             this.tbxDESCR.Location = new System.Drawing.Point(355, 41);
-            this.tbxDESCR.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxDESCR.Margin = new System.Windows.Forms.Padding(2);
             this.tbxDESCR.Name = "tbxDESCR";
             this.tbxDESCR.Size = new System.Drawing.Size(124, 20);
-            this.tbxDESCR.TabIndex = 13;
+            this.tbxDESCR.TabIndex = 2;
             this.tbxDESCR.TextChanged += new System.EventHandler(this.tbxMarca_TextChanged);
             // 
             // lblNombre
@@ -90,10 +90,10 @@
             // tbxNombre
             // 
             this.tbxNombre.Location = new System.Drawing.Point(130, 42);
-            this.tbxNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbxNombre.Margin = new System.Windows.Forms.Padding(2);
             this.tbxNombre.Name = "tbxNombre";
             this.tbxNombre.Size = new System.Drawing.Size(124, 20);
-            this.tbxNombre.TabIndex = 11;
+            this.tbxNombre.TabIndex = 1;
             this.tbxNombre.TextChanged += new System.EventHandler(this.tbxNombre_TextChanged);
             // 
             // lblFiltro
@@ -108,35 +108,35 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnModificar.Location = new System.Drawing.Point(312, 271);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(88, 24);
-            this.btnModificar.TabIndex = 15;
+            this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar Artículo";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEliminar.Location = new System.Drawing.Point(518, 271);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 24);
-            this.btnEliminar.TabIndex = 16;
+            this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar DB";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregarART
             // 
-            this.btnAgregarART.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregarART.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAgregarART.Location = new System.Drawing.Point(123, 271);
-            this.btnAgregarART.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarART.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarART.Name = "btnAgregarART";
             this.btnAgregarART.Size = new System.Drawing.Size(88, 24);
-            this.btnAgregarART.TabIndex = 17;
+            this.btnAgregarART.TabIndex = 4;
             this.btnAgregarART.Text = "Agregar Artículo";
             this.btnAgregarART.UseVisualStyleBackColor = true;
             this.btnAgregarART.Click += new System.EventHandler(this.btnAgregarART_Click);
@@ -155,10 +155,11 @@
             this.Controls.Add(this.tbxNombre);
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.dgvListaART);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(777, 345);
             this.Name = "ListaArticulos";
-            this.Text = "ListaArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Lista Articulos";
             this.Load += new System.EventHandler(this.ListaArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaART)).EndInit();
             this.ResumeLayout(false);

@@ -28,6 +28,22 @@ namespace TPWinForm_Equipo14A
             this.marca = marca;
         }
 
+        private void frmModificar_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (marca != null)
+                {
+                    txtDescMarca.Text = marca.DescripcionMarca;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();

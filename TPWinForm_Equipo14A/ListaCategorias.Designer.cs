@@ -40,35 +40,35 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAgregar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnAgregar.Location = new System.Drawing.Point(141, 266);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(88, 24);
-            this.btnAgregar.TabIndex = 33;
+            this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar Artículo";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnEliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEliminar.Location = new System.Drawing.Point(536, 266);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(88, 24);
-            this.btnEliminar.TabIndex = 32;
+            this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar DB";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnModificar.Location = new System.Drawing.Point(330, 266);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(88, 24);
-            this.btnModificar.TabIndex = 31;
+            this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar Artículo";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -88,8 +88,8 @@
             this.tbxDesc.Location = new System.Drawing.Point(170, 36);
             this.tbxDesc.Margin = new System.Windows.Forms.Padding(2);
             this.tbxDesc.Name = "tbxDesc";
-            this.tbxDesc.Size = new System.Drawing.Size(124, 20);
-            this.tbxDesc.TabIndex = 29;
+            this.tbxDesc.Size = new System.Drawing.Size(187, 20);
+            this.tbxDesc.TabIndex = 0;
             this.tbxDesc.TextChanged += new System.EventHandler(this.tbxDesc_TextChanged);
             // 
             // lblFiltro
@@ -118,7 +118,7 @@
             this.dgvListaCategorias.RowHeadersWidth = 51;
             this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListaCategorias.Size = new System.Drawing.Size(677, 193);
-            this.dgvListaCategorias.TabIndex = 27;
+            this.dgvListaCategorias.TabIndex = 1;
             // 
             // ListaCategorias
             // 
@@ -133,6 +133,7 @@
             this.Controls.Add(this.lblFiltro);
             this.Controls.Add(this.dgvListaCategorias);
             this.Name = "ListaCategorias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista Categorias";
             this.Load += new System.EventHandler(this.ListaMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
